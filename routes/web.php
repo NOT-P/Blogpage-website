@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\TermsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,7 +14,9 @@ Route::get('/', function () {
 
 // Blog routes
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
-Route::get('/contact', [ContactController::class, 'contact'])->name('contact.index');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy.index');
+Route::get('/terms', [TermsController::class, 'index'])->name('terms.index');
 
 
 
