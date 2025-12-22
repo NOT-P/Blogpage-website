@@ -60,22 +60,23 @@
                     <div class="blog_wrapper">
                         <div class="row gy-4">
                             <!-- blog post -->
-                            <div class="col-md-6">
-                                <div class="blog_post p-3 p-lg-4 card h-100 bg-transparent shadow-sm border-opacity-10">
-                                    <div class="blog_img mb-4 position-relative">
-                                        <a href="details.html">
-                                            <img class="img-fluid rounded z-3" src="assets/images/blog/car.jpg"
-                                                alt="Health & Wellness">
-                                        </a>
-                                    </div>
-                                    <div class="blog_content card-body p-0">
+                            
+                            @foreach($blogs as $post)
+                                <div class="col-md-6">
+                                    <div class="blog_post p-3 p-lg-4 card h-100 bg-transparent shadow-sm border-opacity-10">
+                                        <div class="blog_img mb-4 position-relative">
+                                            <a href="">
+                                                <img class="img-fluid rounded z-3" src="{{ asset( 'assets/images/blog/'. $post->img) }}"
+                                                    alt="{{ $post->img }}">
+                                            </a>
+                                        </div>
                                         <div class="short_info d-sm-flex align-items-center mb-3">
                                             <div class="mb-2 mb-sm-0 me-3">
                                                 <div class="d-flex align-items-center">
                                                     <div class="icon me-1">
                                                         <img src="assets/images/tag.svg" alt="Tag">
                                                     </div>
-                                                    <div class="date"><span>Health & Wellness</span></div>
+                                                    <div class="date"><span>{{ $post->category->title }}</span></div>
                                                 </div>
                                             </div>
                                             <div class="mb-2 mb-sm-0 me-3">
@@ -83,7 +84,7 @@
                                                     <div class="icon me-1">
                                                         <img src="assets/images/calendar.svg" alt="Date">
                                                     </div>
-                                                    <div class="date"><span>20 Nov, 2024</span></div>
+                                                    <div class="date"><span>{{ $post->created_at->format('d,m,y') }}</span></div>
                                                 </div>
                                             </div>
                                             <div class="">
@@ -91,77 +92,28 @@
                                                     <div class="icon me-1">
                                                         <img src="assets/images/eye.svg" alt="View">
                                                     </div>
-                                                    <div class="date"><span>1297</span></div>
+                                                    <div class="date"><span>{{ $post->views }}</span></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 class="mb-3">
-                                            <a href="details.html">Exploring Italy with the Top Premium Car Rental
-                                                Services</a>
-                                        </h3>
-                                        <div class="blog_desc mb-2">
-                                            When it comes to experiencing the beauty and charm of Italy, there's no
-                                            better way to explore its pi...
+                                        <div class="blog_content card-body p-0">
+                                            <h3 class="mb-3">
+                                                <a href="">{{ $post->title }}</a>
+                                            </h3>
+                                            <div class="blog_desc mb-2">
+                                                {{ Str::limit($post->description, 100) }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <hr>
-                                    <div class="card-footer mt-2 bg-transparent border-0 blog_content p-0">
-                                        <a class="learn_more" href="details.html">Read More</a>
+                                        <hr>
+                                        <div class="card-footer mt-2 bg-transparent border-0 blog_content p-0">
+                                            <a class="learn_more" href="">Read More</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- blog post -->
-                            <div class="col-md-6">
-                                <div class="blog_post p-3 p-lg-4 card h-100 bg-transparent shadow-sm border-opacity-10">
-                                    <div class="blog_img mb-4 position-relative">
-                                        <a href="details.html">
-                                            <img class="img-fluid rounded z-3" src="assets/images/blog/car.jpg"
-                                                alt="Health & Wellness">
-                                        </a>
-                                    </div>
-                                    <div class="short_info d-sm-flex align-items-center mb-3">
-                                        <div class="mb-2 mb-sm-0 me-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon me-1">
-                                                    <img src="assets/images/tag.svg" alt="Tag">
-                                                </div>
-                                                <div class="date"><span>Health & Wellness</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-2 mb-sm-0 me-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon me-1">
-                                                    <img src="assets/images/calendar.svg" alt="Date">
-                                                </div>
-                                                <div class="date"><span>20 Nov, 2024</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="d-flex align-items-center">
-                                                <div class="icon me-1">
-                                                    <img src="assets/images/eye.svg" alt="View">
-                                                </div>
-                                                <div class="date"><span>1297</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog_content card-body p-0">
-                                        <h3 class="mb-3">
-                                            <a href="details.html">Car Rental For People With Disabilities in
-                                                Rome</a>
-                                        </h3>
-                                        <div class="blog_desc mb-2">
-                                            Traveling to Rome can be an exciting adventure, but it's important to ensure
-                                            that your journey is ac...
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="card-footer mt-2 bg-transparent border-0 blog_content p-0">
-                                        <a class="learn_more" href="details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog post -->
+                            @endforeach
+
+
+                            {{-- <!-- blog post -->
                             <div class="col-md-6">
                                 <div class="blog_post p-3 p-lg-4 card h-100 bg-transparent shadow-sm border-opacity-10">
                                     <div class="blog_img mb-4 position-relative">
@@ -567,7 +519,7 @@
                                         <a class="learn_more" href="details.html">Read More</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
