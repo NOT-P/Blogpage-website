@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
@@ -12,7 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        
+        $blogs = Blog::all();
+        dd($blogs);
         return view('blogs.index');
         
     }
