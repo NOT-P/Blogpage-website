@@ -18,6 +18,17 @@ class BlogController extends Controller
         
     }
 
+    public function show($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        // dd($blog);
+        $category = category::all();
+        $latestPost = Blog::latest()->limit(5)->get();
+        $relatedPost = Blog::where('category_id',$blog->category_id)->where('id','!=',$blog->id)->latest()->limit(3)->get();
+        // dd($relatedPost);
+         return view('blogs.show', compact('blog','category','latestPost','relatedPost'));
+    }
+
     // /**
     //  * Show the form for creating a new resource.
     //  */

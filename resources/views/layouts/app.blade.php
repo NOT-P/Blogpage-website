@@ -11,7 +11,7 @@
     <meta name="googlebot" content="index,follow">
     <meta name="author" content="rony">
     <meta name="csrf-token" content="">
-    <meta property="og:image" content="assets/images/favicon.png">
+    <meta property="og:image" content="{{ asset('assets/images/favicon.png') }}">
     <meta property="og:site_name" content="Blog">
     <meta property="og:title" content="top business news - Blog">
     <meta property="og:url" content="https://blog.com">
@@ -85,16 +85,16 @@
             </div>
 
         </div>
-    </div> --}}
+    </div>  --}}
     <!-- ======================= slider End  ============================ -->
      <!-- banner advertisement start -->
-     {{-- <div class="blog_section bg-white overflow-hidden pt-4 pb-4">
+      {{-- <div class="blog_section bg-white overflow-hidden pt-4 pb-4">
         <div class="container">
         <div class="row g-4">
             <div class="col-12 mt-0">
                 <a href="#">
                 <div class="ad-banner">
-                    <img src="assets/images/banner.png" alt="Advertisement" class="ad-image">
+                    <img src="{{ asset('assets/images/banner.png') }}" alt="Advertisement" class="ad-image">
                     </div>
                 </a>
         </div>

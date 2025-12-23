@@ -16,6 +16,11 @@ Route::get('/', [WelcomeController::class, 'index']);
 // Blog routes
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blog/{slug}',[BlogController::class,'show'])->name('blog.show');
+
+
+
+
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy.index');
 Route::get('/terms', [TermsController::class, 'index'])->name('terms.index');

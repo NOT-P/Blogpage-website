@@ -22,7 +22,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="contact_item shadow-sm d-flex align-items-center">
                         <div class="contact_icon me-3">
-                             <img src="assets/images/icons/phone-dark.svg" alt="Phone">
+                             <img src="{{ asset('assets/images/icons/phone-dark.svg') }}" alt="Phone">
                         </div>
                         <div class="contact_body">
                             <h5 class="contact_title mb-2">Phone</h5>
@@ -37,7 +37,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="contact_item shadow-sm d-flex align-items-center">
                         <div class="contact_icon me-3">
-                            <img src="assets/images/icons/email-dark.svg" alt="Email">
+                            <img src="{{ asset('assets/images/icons/email-dark.svg') }}" alt="Email">
                         </div>
                         <div class="contact_body">
                             <h5 class="contact_title mb-2">Email</h5>
@@ -52,7 +52,7 @@
                 <div class="col-xl-4 col-md-8">
                     <div class="contact_item shadow-sm d-flex align-items-center">
                         <div class="contact_icon me-3">
-                            <img src="assets/images/icons/location.svg" alt="Address">
+                            <img src="{{ asset('assets/images/icons/location.svg') }}" alt="Address">
                         </div>
                         <div class="contact_body">
                             <h5 class="contact_title mb-2">Address</h5>

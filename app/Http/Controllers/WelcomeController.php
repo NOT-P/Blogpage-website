@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
@@ -12,8 +12,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        
-        return view('welcome');
+        $blogs = blog::latest()->limit(2)->get();
+        // dd($blogs);
+        return view('welcome',compact('blogs'));
         
     }
 
